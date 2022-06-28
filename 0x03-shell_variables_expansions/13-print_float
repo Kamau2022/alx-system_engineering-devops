@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "%.2f\n" $num
+echo '%.2f\n' $num
