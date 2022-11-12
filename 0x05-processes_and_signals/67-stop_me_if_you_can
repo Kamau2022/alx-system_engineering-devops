@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script is killing a process
+
+kill  "$(pgrep -f 7-highlander)"
