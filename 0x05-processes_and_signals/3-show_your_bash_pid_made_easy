@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-# This script is displaying its own PID.
-pidof 3-show_your_bash_pid_made_easy
+# This script is displaying  PID, along with the process name
+# of processes whose name contain the word bash.
+pgrep -l bash
