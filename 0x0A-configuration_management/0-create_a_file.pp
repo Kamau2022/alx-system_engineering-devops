@@ -1,5 +1,4 @@
 # This Puppet is  creating a file in /tmp
-class filetest {
 file { '/tmp/school':
   ensure  => file,
   content => 'I love Puppet',
@@ -7,4 +6,3 @@ file { '/tmp/school':
   group   => 'www-data',
   mode    => '0744',
   }
-}
