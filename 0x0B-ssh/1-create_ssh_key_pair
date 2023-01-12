@@ -1,18 +1,8 @@
 #!/usr/bin/env bash
-NAME=${1:-blank}
+# a Bash script that creates an RSA key pair.
+NAME=${1:-school}
 
 SIZE=${2:-4096}
-
-DEST=${3:-/home/cypnk/Keys/}
-
-PRIK=$DEST$NAME.pem
-PUBK=$DEST$NAME.pub
-
-if [ -f "$PRIK" ] || [ -f "$PUBK" ]; then
-	echo "A key by that name already exists"
-	exit 0
-fi
 openssl genrsa -aes256 -out $PRIK $SIZE &&
-openssl rsa -in $PRIK -out $PUBK -pubout
+openssl rsa -in $PRIK -out $PUBK -betty
 
-exit
