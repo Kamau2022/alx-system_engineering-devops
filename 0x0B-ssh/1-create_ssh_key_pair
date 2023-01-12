@@ -1,8 +1,3 @@
 #!/usr/bin/env bash
 # a Bash script that creates an RSA key pair.
-NAME=${1:-school}
-
-SIZE=${2:-4096}
-openssl genrsa -aes256 -out $PRIK $SIZE &&
-openssl rsa -in $PRIK -out $PUBK -betty
-
+ssh-keygen -t rsa -b 4096 -f school -N betty
