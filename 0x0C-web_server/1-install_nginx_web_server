@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# a script that is installing nginx on server
+sudo apt-get install nginx -y
+sudo ufw allow 'Nginx HTTP'
+HOSTNAME=$(http://107.22.144.60)
+echo "Hello World!"
