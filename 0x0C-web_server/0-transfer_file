@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # a Bash script that transfers a file from our client to a server
 buildsource="$1"
-destination="$4"
+key_path="$4"
 ip="$2"
 user="$3"
 
@@ -9,6 +9,6 @@ if [ -z "$4" ]
 then	
 	echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
 else
-	scp -i "$destination" -o StrictHostKeyChecking=no "$buildsource" "$user"@"$ip":~/
+	scp -i "$key_path" -o StrictHostKeyChecking=no "$buildsource" "$user"@"$ip":~/
 
 fi
