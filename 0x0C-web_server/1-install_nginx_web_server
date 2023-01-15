@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 # a script that is installing nginx on server
-apt-get update
-apt-get install nginx -y
-echo "Hello World!"
+function ensure_nginx(){
+  if [ -x "$(command -v nginx)" ]; then
+      echo "Nginx already installed. Skipping installation..."
+  else
+      sudo apt update
+      sudo apt install nginx -y
+      sudo ufw app list
+      echo "Hello World!"
+  fi
+}
+ensure_nginx
