@@ -2,5 +2,6 @@
 # script to install and setup nginx
 sudo apt-get -y update
 sudo apt-get -y install nginx
+ufw allow 'Nginx HTTP'
 echo 'Hello World!' > /usr/share/nginx/html/index.html
 service nginx start
