@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
 # a script that is installing nginx on server
-function ensure_nginx(){
-  if [ -x "$(command -v nginx)" ]; then
-      echo "Nginx already installed. Skipping installation..."
-  else
-      sudo apt update
-      sudo apt install nginx -y
-      sudo ufw app list
-      echo "Hello World!"
-  fi
-}
-ensure_nginx
+package{'nginx':
+ensure => 'apt install nginx -y'
+port   => '80'
+server => '107.22.144.60'
