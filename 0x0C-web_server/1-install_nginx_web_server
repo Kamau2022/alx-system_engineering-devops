@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 # a script that is installing nginx on server
-exec { 'apt-get install nginx'
-     command => 'apt-get install nginx -y',
-     path    => '/usr/bin',
-}
-file { '/var/www/html/index.html':
-    content => 'Hello World!',
-  }
+sudo apt-get update
+sudo apt-get install nginx
+sudo ufw allow 'Nginx HTTP'
+echo 'Hello World!' > /usr/share/nginx/html/index.html
+sudo service nginx restart
