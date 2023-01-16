@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # a script that is installing nginx on server
-package{'nginx':
-ensure => 'apt install nginx -y'
-port   => '80'
-server => '107.22.144.60'
+exec { 'apt-get install nginx'
+     command => 'apt-get install nginx -y',
+     path    => '/usr/bin',
+}
+file { '/var/www/html/index.html':
+    content => 'Hello World!',
+  }
