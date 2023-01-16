@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # a script that is installing nginx on server
 exec {'apt-get-update':
     command => 'apt-get update',
