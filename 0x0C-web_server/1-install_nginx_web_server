@@ -1,14 +1,10 @@
 #!/usr/bin/env bash
-# a script that is installing nginx on server
-exec {'apt-get-update':
-    command => 'apt-get update',
-    path    => '/usr/bin'
-}
-package {'nginx':
-       ensure => installed,
-       require => Exec['apt-get-update'],
-}
-file {'/var/www/html/index.html':
-    content => 'Hello World!',
-    require => Package['nginx'],
-}
+# Install nginx on your web-01 server
+# Nginx should be listening on port 80
+# When querying Nginx at its root / with a GET request (requesting a page) using curl, it must# return a page that contains the string Holberton School
+
+apt-get -y update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
+echo 'Hello World!' > /var/www/html/index.nginx-debian.html
+service nginx start
