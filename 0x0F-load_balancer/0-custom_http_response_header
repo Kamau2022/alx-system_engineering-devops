@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# The script adds a custom Nginx response header. 
+curl -H "X-Served-By: 03-web-01" "$1"
+sudo service nginx restart
