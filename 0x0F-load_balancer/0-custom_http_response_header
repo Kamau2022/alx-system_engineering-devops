@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 # The script adds a custom Nginx response header. 
-curl -H "X-Served-By: 03-web-01" "$1"
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+sudo sed -i "15i \\\tadd_header X-Served-By $hostname;" /etc/nginx/nginx.conf
 sudo service nginx restart
