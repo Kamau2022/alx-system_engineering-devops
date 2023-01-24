@@ -6,11 +6,11 @@ apt-get -y install software-properties-common
 sudo apt update
 sudo apt install -y haproxy=2.6.\*
 echo"frontend Local_Server
-bind *:80
-mode http
-default_backend webserver
+	bind *:80
+	mode http
+	default_backend webserver
 backend webserver
-mode http
-balance roundrobin
-server 91199-web-01 107.22.144.60
-server 91199-web-02 54.157.189.192" >> /etc/haproxy/haproxy.cfg
+	mode http
+	balance roundrobin
+	server 91199-web-01 107.22.144.60
+	server 91199-web-02 54.157.189.192" >> /etc/haproxy/haproxy.cfg
