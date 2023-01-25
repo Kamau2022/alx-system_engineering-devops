@@ -6,14 +6,13 @@ sudo apt-get -y update
 sudo apt-get -y install haproxy=1.8.\*
 echo"
 frontend http-in
-  mode http
-  bind *:80
-  default_backend web_servers
+	mode http
+	bind *:80
+	default_backend web_servers
 backend web_servers
-  balance roundrobin
-  server 91199-web-01 107.22.144.60:80 check
-  server 91199-web-02 54.157.189.192:80 check
-">> /etc/haproxy/haproxy.cfg
+	balance roundrobin
+	server 91199-web-01 107.22.144.60:80 check
+	server 91199-web-02 54.157.189.192:80 check" >> /etc/haproxy/haproxy.cfg
 echo"
 ENABLED=1" >> /etc/default/haproxy
 service haproxy restart
