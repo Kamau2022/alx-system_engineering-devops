@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# This script is displaying information about subdomains
+
+#dig www."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}'
+if [ -z "$2" ];
+then
+	subdomain_1=$(dig www."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}' | tr -d '\n')
+	subdomain_2=$(dig lb-01."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}' | tr -d '\n')
+	subdomain_3=$(dig web-01."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}' | tr -d '\n')
+	subdomain_4=$(dig web-02."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}' | tr -d '\n')
+
+	echo  The subdomain www is a A record and points to "$subdomain_1" 
+	echo  The subdomain lb-01 is a A record and points to "$subdomain_2" 
+	echo  The subdomain web-01 is a A record and points to "$subdomain_3" 
+	echo  The subdomain web-02 is a A record and points to "$subdomain_4" 
+
+else
+	subdomain_5=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}' | tr -d '\n')
+	echo "$2" is a A record and points to "$subdomain_5"
+
+fi
+
