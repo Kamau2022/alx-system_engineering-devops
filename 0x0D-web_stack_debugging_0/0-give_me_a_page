@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-#This script is used to activate port 8080
-docker run -p 8080:80 -d -it holbertonschool/265-0
+#This script is used to restart
 sudo service apache2 restart
 
