@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-docker run -d -p 8080:8080 apache:v1
+#This script is used to activate port 8080
+docker run -p 80:80 -d -it holbertonschool/265-0
+
