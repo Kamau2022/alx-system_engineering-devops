@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-docker run -d -p 8080:80 apache:v1
+docker run -d -p 8080:8080 apache:v1
