@@ -45,5 +45,4 @@ While postmortem format can vary, stick to this one so that you can get properly
 
 Please, remember that these blogs must be written in English to further your technical ability in a variety of settings.
 
-                                                                                                                            1,1           Top
 [link to postmortem](https://docs.google.com/document/d/1DZOKVzF6P-RqnYpQ1Bgq-Bx6XZIR_f_nedGrfODfq-k/edit?usp=sharing)
