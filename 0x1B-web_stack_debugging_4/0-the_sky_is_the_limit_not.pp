@@ -5,7 +5,7 @@ exec { 'fix nginx':
 }
 
 # Restart Nginx
-exec { 'nginx-restart':
-  command => 'nginx restart',
+exec { 'restart':
+  command => 'service nginx restart',
   path    => '/usr/bin/'
 }
