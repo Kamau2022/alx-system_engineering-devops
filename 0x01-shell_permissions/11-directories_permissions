@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo chmod -R u=rWx,g=rW,o= .
+sudo chmod -R u=7,g=rW,o= .
